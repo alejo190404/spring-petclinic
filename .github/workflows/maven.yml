@@ -2,6 +2,9 @@ name: Pipeline pruebas "Owner"
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+    - '**/petclinic/owner'
 
 jobs:
   build:
