@@ -18,7 +18,7 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Compilar con Maven
-      run: ./mvnw -B package
+      run: ./mvnw -B package -DskipTests
 
     - name: Probar grupo "Owner"
       run: ./mvnw test -Dgroups="Owner"
