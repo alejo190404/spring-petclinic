@@ -27,6 +27,7 @@ import java.util.Locale;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -53,6 +54,7 @@ class PetTypeFormatterTests {
 	}
 
 	@Test
+	@Tag("Pet")
 	void testPrint() {
 		PetType petType = new PetType();
 		petType.setName("Hamster");
@@ -61,6 +63,7 @@ class PetTypeFormatterTests {
 	}
 
 	@Test
+	@Tag("Pet")
 	void shouldParse() throws ParseException {
 		given(this.pets.findPetTypes()).willReturn(makePetTypes());
 		PetType petType = petTypeFormatter.parse("Bird", Locale.ENGLISH);
@@ -68,6 +71,7 @@ class PetTypeFormatterTests {
 	}
 
 	@Test
+	@Tag("Pet")
 	void shouldThrowParseException() throws ParseException {
 		given(this.pets.findPetTypes()).willReturn(makePetTypes());
 		Assertions.assertThrows(ParseException.class, () -> {

@@ -15,10 +15,11 @@
  */
 package org.springframework.samples.petclinic.vet;
 
+import static org.assertj.core.api.Assertions.*;
+
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.util.SerializationUtils;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * @author Dave Syer
@@ -26,6 +27,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class VetTests {
 
 	@Test
+	@Tag("Vet")
 	void testSerialization() {
 		Vet vet = new Vet();
 		vet.setFirstName("Zaphod");
